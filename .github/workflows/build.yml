@@ -20,10 +20,6 @@ jobs:
 
       - name: install the gcloud cli
         uses: google-github-actions/setup-gcloud@v2
-        with:
-          project_id: ${{ secrets.GOOGLE_PROJECT }}
-          service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-          export_default_credentials: true
 
       - name: gcloud authentication docker
         run: gcloud auth configure-docker europe-west1-docker.pkg.dev
@@ -37,3 +33,9 @@ jobs:
         env:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
         run: docker push europe-west1-docker.pkg.dev/$GOOGLE_PROJECT/dockerize-node-app/test-image:latest
+
+      - name: deploy on cloud run
+        run: gcloud run deploy ${{ env.GCLOUD_RUN_SERVICE }} \
+          --image=europe-west1-docker.pkg.dev/$GOOGLE_PROJECT/dockerize-node-app/test-image:latest
+        env:
+          GCLOUD_RUN_SERVICE: expose-node-app
