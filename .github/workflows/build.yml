@@ -35,7 +35,6 @@ jobs:
         run: docker push europe-west1-docker.pkg.dev/$GOOGLE_PROJECT/dockerize-node-app/test-image:latest
 
       - name: deploy on cloud run
-        run: gcloud run deploy ${{ env.GCLOUD_RUN_SERVICE }} \
-          --image=europe-west1-docker.pkg.dev/$GOOGLE_PROJECT/dockerize-node-app/test-image:latest
+        run: gcloud run deploy ${{ env.GCLOUD_RUN_SERVICE }} --image=europe-west1-docker.pkg.dev/$GOOGLE_PROJECT/dockerize-node-app/test-image:latest
         env:
           GCLOUD_RUN_SERVICE: expose-node-app
