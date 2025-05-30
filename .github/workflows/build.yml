@@ -26,7 +26,7 @@ jobs:
       - name: build the docker image
         env:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
-        run: docker build -t europe-west1-docker.pkg.dev/$GOOGLE_PROJECT/dockerize-node-app:latest .
+        run: docker build -t europe-west1-docker.pkg.dev/$GOOGLE_PROJECT/dockerize-node-app:latest ./app
 
       - name: push the docker image
         env:
