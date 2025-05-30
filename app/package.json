@@ -1,0 +1,19 @@
+{
+  "name": "docker-testing",
+  "version": "1.0.0",
+  "description": "docker initiation",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jérémy Thonon",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
