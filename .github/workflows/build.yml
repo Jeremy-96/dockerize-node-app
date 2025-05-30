@@ -35,6 +35,7 @@ jobs:
         run: docker push europe-west1-docker.pkg.dev/$GOOGLE_PROJECT/dockerize-node-app/test-image:latest
 
       - name: deploy on cloud run
-        run: gcloud run deploy ${{ env.GCLOUD_RUN_SERVICE }} --image=europe-west1-docker.pkg.dev/$GOOGLE_PROJECT/dockerize-node-app/test-image:latest --region=europe-west1 --allow-unauthenticated
+        run: gcloud run deploy ${{ env.GCLOUD_RUN_SERVICE }} --image=europe-west1-docker.pkg.dev/$GOOGLE_PROJECT/dockerize-node-app/test-image:latest --region=europe-west1 --project=${{ GOOGLE_PROJECT }}--allow-unauthenticated
         env:
           GCLOUD_RUN_SERVICE: expose-node-app
+          GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
