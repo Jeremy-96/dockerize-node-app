@@ -18,7 +18,7 @@ jobs:
         with:
           credentials_json: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
 
-      - name: install the gcloud cli
+      - name: install gcloud cli
         uses: google-github-actions/setup-gcloud@v2
 
       - name: gcloud authentication docker
