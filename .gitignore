@@ -1,2 +1,14 @@
 node_modules
 .env
+
+
+# Terraform files to ignore
+*.terraform
+*.tfstate
+*.tfstate.backup
+*.tfvars
+crash.log
+*.log
+
+# Optional
+.terraform.lock.hcl
