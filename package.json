@@ -1,0 +1,28 @@
+{
+  "name": "dockerized-node-app",
+  "version": "1.0.0",
+  "description": "small node.js app which implement ci/cd using docker, terraform and google cloud platform",
+  "main": "/app/src/app.js",
+  "scripts": {
+    "start": "nodemon app/src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeremy-96/dockerized-node-app.git"
+  },
+  "author": "Jérémy Thonon <jeremythonon96@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeremy-96/dockerized-node-app/issues"
+  },
+  "homepage": "https://github.com/Jeremy-96/dockerized-node-app#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  },
+  "type": "module"
+}

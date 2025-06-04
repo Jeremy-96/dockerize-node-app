@@ -3,7 +3,7 @@ node_modules
 
 
 # Terraform files to ignore
-*.terraform
+.terraform
 *.tfstate
 *.tfstate.backup
 *.tfvars
